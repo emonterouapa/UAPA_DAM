@@ -1,5 +1,10 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
+  <ion-buttons slot="start">
+    <ion-button (click)="logout()">
+      <ion-icon slot="icon-only" name="log-out"></ion-icon>
+    </ion-button>
+  </ion-buttons>
     <ion-title>
       Página Principal
     </ion-title>
@@ -7,5 +12,4 @@
 </ion-header>
  
 <ion-content>
-  <ion-button expand="full" (click)="logout()">Cerrar Sesión</ion-button>
 </ion-content>
