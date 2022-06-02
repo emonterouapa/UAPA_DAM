@@ -31,6 +31,14 @@ const routes: Routes = [
     path: 'password-reset',
     loadChildren: () => import('./password-reset/password-reset.module').then( m => m.PasswordResetPageModule)
   },
+  {
+    path: 'createticket',
+    loadChildren: () => import('./createticket/createticket.module').then( m => m.CreateticketPageModule)
+  },
+  {
+    path: 'historicoticket',
+    loadChildren: () => import('./historicoticket/historicoticket.module').then( m => m.HistoricoticketPageModule)
+  },
 ];
 
 @NgModule({

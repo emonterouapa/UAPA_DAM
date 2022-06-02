@@ -1,9 +1,11 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>dashboard</ion-title>
+    <ion-title>Página Principal</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-button type="submit" (click)="authService.SignOut()" expand="block">Logout</ion-button>
+  <ion-button type="button" [routerLink]="['/createticket']" expand="full">Crear Ticket</ion-button>
+  <ion-button type="button" [routerLink]="['/historicoticket']" expand="full">Histórico de Ticket</ion-button>
+  <ion-button type="button" color="medium" (click)="authService.SignOut()" expand="full">Cerrar Sesión</ion-button>
 </ion-content>

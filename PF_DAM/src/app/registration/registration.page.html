@@ -3,13 +3,13 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Register User</ion-title>
+    <ion-title>Nuevo Usuario</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>
   <form>    
     <ion-item lines="full">
-      <ion-label position="floating">Email</ion-label>
+      <ion-label position="floating">Correo</ion-label>
       <ion-input type="text" #email required></ion-input>
     </ion-item> 
     <ion-item lines="full">
@@ -18,8 +18,11 @@
     </ion-item>
     <ion-row>
       <ion-col> 
-      <ion-button type="submit" (click)="signUp(email, password)" expand="block">Register</ion-button>
+      <ion-button type="submit" (click)="signUp(email, password)" expand="block">Registrar</ion-button>
       </ion-col>
+      <ion-col><ion-button
+        expand="block" color="dark"
+        [routerLink]="['/home']">Atrás</ion-button></ion-col>
     </ion-row>
   </form>
 </ion-content>

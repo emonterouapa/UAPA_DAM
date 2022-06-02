@@ -3,12 +3,12 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Sign in User</ion-title>
+    <ion-title>Inicio de Sesión</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>
   <ion-item lines="full">
-    <ion-label position="floating">Email</ion-label>
+    <ion-label position="floating">Correo</ion-label>
     <ion-input type="text" #email required></ion-input>
   </ion-item>
   <ion-item lines="full">
@@ -18,7 +18,7 @@
   <ion-row>
     <ion-col>
       <ion-button type="submit" (click)="logIn(email, password)" expand="block"
-        >Login</ion-button
+        >Iniciar Sesión</ion-button
       >
     </ion-col>
   </ion-row>
@@ -29,7 +29,7 @@
         color="warning"
         [routerLink]="['/password-reset']"
       >
-        Password Reset
+        Restablecimiento de Password
       </ion-button>
     </ion-col>
   </ion-row>
@@ -41,7 +41,19 @@
         (click)="authService.GoogleAuth()"
         expand="block"
       >
-        Login with Google
+        Inicio con Google
+      </ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-button
+        type="submit"
+        color="dark"
+        [routerLink]="['/home']"
+        expand="block"
+      >
+        Atrás
       </ion-button>
     </ion-col>
   </ion-row>

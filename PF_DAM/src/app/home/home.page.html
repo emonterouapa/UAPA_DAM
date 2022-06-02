@@ -1,22 +1,21 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title> Ionic 6 Firebase Authentication Example </ion-title>
+    <ion-title>Mobile Ticketing Endpoint</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content class="auth-form">
   <ion-grid>
     <ion-row>
-      <ion-col class="ion-align-self-center">
+      <ion-col>
+        <span>¿Nuevo Usuario?</span>
         <ion-button
           [routerLink]="['/registration']"
           expand="block"
           color="primary"
-          >Register</ion-button
-        >
-        <span class="divider line one-line">or</span>
-        <span class="already">Already a user?</span>
+          >Registro</ion-button>
+        <span >¿Tiene Cuenta?</span>
         <ion-button [routerLink]="['/login']" expand="block" color="danger"
-          >Sign In</ion-button
+          >Inicie Sesión</ion-button
         >
       </ion-col>
     </ion-row>
