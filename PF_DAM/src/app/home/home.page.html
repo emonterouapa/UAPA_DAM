@@ -1,21 +1,28 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Mobile Ticketing Endpoint</ion-title>
+    <ion-title class="ion-text-center">Mobile Ticketing Endpoint</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content class="auth-form">
   <ion-grid>
     <ion-row>
-      <ion-col>
-        <span>¿Nuevo Usuario?</span>
+      <ion-col style="text-align: center;">
+        <span>¿No Account Yet?</span>
         <ion-button
           [routerLink]="['/registration']"
           expand="block"
           color="primary"
-          >Registro</ion-button>
-        <span >¿Tiene Cuenta?</span>
-        <ion-button [routerLink]="['/login']" expand="block" color="danger"
-          >Inicie Sesión</ion-button
+          shape="round"
+          strong="true"
+          routerDirection="forward"
+          >New User
+          <ion-icon slot="start" name="person-add-outline"></ion-icon>
+        </ion-button>
+        <span >¿Have an Account?</span>
+        <ion-button [routerLink]="['/login']" expand="block" color="danger" shape="round" strong="true"
+          >Login
+          <ion-icon slot="start" name="log-in-outline"></ion-icon>
+          </ion-button
         >
       </ion-col>
     </ion-row>

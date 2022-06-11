@@ -41,7 +41,7 @@ export class AuthenticationService {
   SendVerificationMail() {
     return this.ngFireAuth.currentUser.then((user) => {
       return user.sendEmailVerification().then(() => {
-        this.router.navigate(['login']);
+        this.router.navigate(['verify-email']);
       });
     });
   }
@@ -51,7 +51,7 @@ export class AuthenticationService {
       .sendPasswordResetEmail(passwordResetEmail)
       .then(() => {
         window.alert(
-          'Password reset email has been sent, please check your inbox.'
+          'Password reset Email has been sent, please check your inbox.'
         );
       })
       .catch((error) => {

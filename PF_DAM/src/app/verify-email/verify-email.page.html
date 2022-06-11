@@ -1,21 +1,36 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-    <ion-title>verify-email</ion-title>
+    <ion-title class="ion-text-center">Email Verification</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>
   <ion-grid>
-    <ion-row>
-      <h2>Ionic Firebase Verify Email</h2>
+    <ion-row style="text-align: justify;">
       <p>
-        Please check your email and click on the link to verfiy your email address.
+        Please Go to Check your Email with the Verification steps to proceed with the Login.
       </p>
-      <ion-button type="submit" (click)="authService.SendVerificationMail()" expand="block">
-        Resend Verification Email
-      </ion-button>
+      <p>
+        NOTE: If you receive an Email with the verification Link and you activated the user successfully, please ignore this screen and clic to the BACK button, instead clic to RESEND EMAIL button.
+      </p>
+      <ion-col>
+        <ion-button type="submit" expand="block" shape="round" (click)="authService.SendVerificationMail()" expand="block">
+          Resend Email
+          <ion-icon slot="start" name="mail-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button
+          type="submit"
+          color="dark"
+          expand="block"
+          [routerLink]="['/login']"
+          shape="round"
+          routerDirection="back"
+        >
+          Back
+          <ion-icon slot="start" name="arrow-back-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
     </ion-row>
   </ion-grid>
 </ion-content>

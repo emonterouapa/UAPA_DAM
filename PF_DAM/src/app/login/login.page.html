@@ -1,14 +1,11 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-    <ion-title>Inicio de Sesión</ion-title>
+    <ion-title class="ion-text-center">Login Panel</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>
   <ion-item lines="full">
-    <ion-label position="floating">Correo</ion-label>
+    <ion-label position="floating">Email</ion-label>
     <ion-input type="text" #email required></ion-input>
   </ion-item>
   <ion-item lines="full">
@@ -17,8 +14,10 @@
   </ion-item>
   <ion-row>
     <ion-col>
-      <ion-button type="submit" (click)="logIn(email, password)" expand="block"
-        >Iniciar Sesión</ion-button
+      <ion-button type="submit" (click)="logIn(email, password)" expand="block" routerDirection="forward" shape="round" strong="true"
+        >Login
+        <ion-icon slot="start" name="log-in-outline"></ion-icon>
+        </ion-button
       >
     </ion-col>
   </ion-row>
@@ -27,9 +26,11 @@
       <ion-button
         expand="block"
         color="warning"
+        shape="round"
         [routerLink]="['/password-reset']"
       >
-        Restablecimiento de Password
+        Reset
+        <ion-icon slot="start" name="key-outline"></ion-icon>
       </ion-button>
     </ion-col>
   </ion-row>
@@ -40,20 +41,25 @@
         color="danger"
         (click)="authService.GoogleAuth()"
         expand="block"
+        shape="round"
       >
-        Inicio con Google
+      Gmail
+      <ion-icon slot="start" name="logo-google"></ion-icon>
       </ion-button>
     </ion-col>
   </ion-row>
   <ion-row>
     <ion-col>
       <ion-button
-        type="submit"
+        type="button"
         color="dark"
+        routerDirection="back"
+        shape="round"
         [routerLink]="['/home']"
         expand="block"
-      >
-        Atrás
+        >
+        Home
+        <ion-icon slot="start" name="home-outline"></ion-icon>
       </ion-button>
     </ion-col>
   </ion-row>
