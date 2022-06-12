@@ -1,20 +1,48 @@
 ion-content {
+  --padding-top: 0%;
+  --padding-start: 10%;
+  --padding-end: 10%;
+  --background: url('https://w0.peakpx.com/wallpaper/990/831/HD-wallpaper-dark-blue-gradient-aurora-blue-background-colors-dark-dark-blue-gradient-plain-solid.jpg') 0 0/100% 100% no-repeat;
+}
 
-    --background: url('https://w0.peakpx.com/wallpaper/990/831/HD-wallpaper-dark-blue-gradient-aurora-blue-background-colors-dark-dark-blue-gradient-plain-solid.jpg') 0 0/100% 100% no-repeat;
-  }
+.input-group {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.errors {
+  font-size: small;
+  color: #fff;
+  background: var(--ion-color-danger);
+  padding-left: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+ion-title{
+  font-size: 18px;
   
-  .input-group {
-    background: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    margin-bottom: 15px;
-  }
-  
-  .errors {
-    font-size: small;
-    color: #fff;
-    background: var(--ion-color-danger);
-    padding-left: 15px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-  }
+}
+
+ion-col{
+  text-align: center;
+  padding: 0px;
+}
+
+ion-row{
+  align-items: center;
+  justify-content: center;
+  height: 46px;
+}
+
+p{
+  font-size: 22px;
+}
+
+ion-button{
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+}

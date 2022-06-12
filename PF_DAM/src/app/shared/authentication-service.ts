@@ -97,6 +97,8 @@ export class AuthenticationService {
       displayName: user.displayName,
       photoURL: user.photoURL,
       emailVerified: user.emailVerified,
+      usertype: 'Customer',
+      roleusr: 'EndUser',
     };
     return userRef.set(userData, {
       merge: true,
@@ -106,7 +108,12 @@ export class AuthenticationService {
   SignOut() {
     return this.ngFireAuth.signOut().then(() => {
       localStorage.removeItem('user');
-      this.router.navigate(['login']);
+      this.router.navigate(['home']);
     });
+
   }
+  userDetails() {
+    return this.ngFireAuth.user
+  } 
+
 }
