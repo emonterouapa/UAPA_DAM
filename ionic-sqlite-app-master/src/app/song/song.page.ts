@@ -19,19 +19,17 @@ export class SongPage implements OnInit {
     private actRoute: ActivatedRoute
   ) {
     this.id = this.actRoute.snapshot.paramMap.get('id');
+    
 
     this.db.getSong(this.id).then(res => {
       this.editForm.setValue({
         fullname: res['fullname'],
         email: res['email'],
-        enterprise:  res['enterprise'],
-        cellphone:  res['cellphone'],
-        namepieza:  res['namepieza'],
-        material:  res['material'],
-        cantidad:  res['cantidad'],
-        datecreation:  res['datecreation'],
-        ticketstatus:  res['ticketstatus'],
-        ticketgestor:  res['ticketfestor']
+        enterprise: res['enterprise'],
+        cellphone: res['cellphone'],
+        namepieza: res['namepieza'],
+        material: res['material'],
+        cantidad: res['cantidad']
       })
     })
   }
@@ -44,10 +42,7 @@ export class SongPage implements OnInit {
       cellphone:  [''],
       namepieza:  [''],
       material:  [''],
-      cantidad:  [''],
-      datecreation:  [''],
-      ticketstatus:  [''],
-      ticketgestor:  ['']
+      cantidad:  ['']
     })
   }
 

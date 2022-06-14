@@ -113,8 +113,8 @@ export class DbService {
 
   // Update
   updateSong(id, song: Song) {
-    let data = [song.fullname, song.email, song.enterprise, song.cellphone, song.namepieza, song.material, song.cantidad, song.datecreation, song.ticketstatus, song.ticketgestor];
-    return this.storage.executeSql(`UPDATE songtable SET artist_name = ?, song_name = ? WHERE id = ${id}`, data)
+    let data = [song.fullname, song.email, song.enterprise, song.cellphone, song.namepieza, song.material, song.cantidad];
+    return this.storage.executeSql(`UPDATE PF SET fullname = ?, email = ?, enterprise = ?, cellphone = ?, namepieza = ?, material = ?, cantidad = ? WHERE id = ${id}`, data)
     .then(data => {
       this.getSongs();
     })

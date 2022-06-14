@@ -81,17 +81,17 @@
 
     <ion-item lines="inset" *ngFor="let data of Data">
       <ion-label>
-        <h5>{{data.id}}</h5>
-        <p>{{data.fullname}}</p>
-        <p>{{data.email}}</p>
-        <p>{{data.enterprise}}</p>
-        <p>{{data.cellphone}}</p>
-        <p>{{data.namepieza}}</p>
-        <p>{{data.material}}</p>
-        <p>{{data.cantidad}}</p>
-        <p>{{data.datecreation}}</p>
-        <p>{{data.ticketstatus}}</p>
-        <p>{{data.ticketgestor}}</p>
+        <h5><strong>Ticket #{{data.id}} - Details and Information</strong></h5>
+        <p>FullName: <strong>{{data.fullname}}</strong></p>
+        <p>Email: <strong>{{data.email}}</strong></p>
+        <p>Enterprise: <strong>{{data.enterprise}}</strong></p>
+        <p>Cellphone: <strong>{{data.cellphone}}</strong></p>
+        <p>Piece: <strong>{{data.namepieza}}</strong></p>
+        <p>Material: <strong>{{data.material}}</strong></p>
+        <p>Quantity: <strong>{{data.cantidad}}</strong></p>
+        <p>Ticket Manager: <strong>{{data.ticketgestor}}</strong></p>
+        <p>Ticket Creation Date: <strong>{{data.datecreation}}</strong></p>
+        <p>Ticket Status: <strong>{{data.ticketstatus}}</strong></p>
       </ion-label>
 
       <div class="item-note" item-end>
