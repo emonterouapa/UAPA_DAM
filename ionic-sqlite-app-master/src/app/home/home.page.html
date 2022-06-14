@@ -1,0 +1,103 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Ticketing Example</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list lines="full">
+    <form [formGroup]="mainForm" (ngSubmit)="storeData()">
+      <ion-item>
+        <ion-label position="floating">Full Name</ion-label>
+        <ion-input formControlName="fullname" type="text" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input formControlName="email" type="email" required>
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Organization</ion-label>
+        <ion-select formControlName="enterprise" required>
+          <ion-select-option value="CACAO SRL">CACAO SRL</ion-select-option>
+          <ion-select-option value="JK INVESTMENT">JK INVESTMENT</ion-select-option>
+          <ion-select-option value="BLACK SOLUTIONS">BLACK SOLUTIONS</ion-select-option>
+        </ion-select>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="floating">cellphone</ion-label>
+      <ion-input formControlName="cellphone" type="number" required></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Piece</ion-label>
+      <ion-select formControlName="namepieza" required>
+        <ion-select-option value="llave ALLEN">llave ALLEN</ion-select-option>
+        <ion-select-option value="SIERRA">SIERRA</ion-select-option>
+        <ion-select-option value="martillo">martillo</ion-select-option>
+        <ion-select-option value="alicate">alicate</ion-select-option>
+        <ion-select-option value="cincel">cincel</ion-select-option>
+        <ion-select-option value="Manómetro">Manómetro</ion-select-option>
+      </ion-select>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label>Material</ion-label>
+    <ion-select formControlName="material" required>
+      <ion-select-option value="Aluminio">Aluminio</ion-select-option>
+      <ion-select-option value="Cobre">Cobre</ion-select-option>
+      <ion-select-option value="metal">metal</ion-select-option>
+    </ion-select>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label>Quantity</ion-label>
+    <ion-select formControlName="cantidad" required>
+      <ion-select-option value="1">1</ion-select-option>
+      <ion-select-option value="2">2</ion-select-option>
+      <ion-select-option value="3">3</ion-select-option>
+      <ion-select-option value="4">4</ion-select-option>
+      <ion-select-option value="5">5</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" color="primary" shape="full" expand="block">
+            Create Ticket
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-list>
+
+    <ion-list>
+    <ion-list-header>
+      Ticket History
+    </ion-list-header>
+
+    <ion-item lines="inset" *ngFor="let data of Data">
+      <ion-label>
+        <h5>{{data.id}}</h5>
+        <p>{{data.fullname}}</p>
+        <p>{{data.email}}</p>
+        <p>{{data.enterprise}}</p>
+        <p>{{data.cellphone}}</p>
+        <p>{{data.namepieza}}</p>
+        <p>{{data.material}}</p>
+        <p>{{data.cantidad}}</p>
+        <p>{{data.datecreation}}</p>
+        <p>{{data.ticketstatus}}</p>
+        <p>{{data.ticketgestor}}</p>
+      </ion-label>
+
+      <div class="item-note" item-end>
+        <ion-icon name="create" style="zoom:2.0" [routerLink]="['/song/', data.id]"></ion-icon>        
+        <ion-icon name="trash" style="zoom:2.0" (click)="deleteSong(data.id)"></ion-icon>
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>
