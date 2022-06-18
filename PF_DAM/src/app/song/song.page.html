@@ -1,12 +1,15 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title class="ion-text-center">Ticket Creation</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Ticket #{{id}} - Changes to Request</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-list lines="full">
-    <form [formGroup]="mainForm" (ngSubmit)="storeData()">
+    <form [formGroup]="editForm" (ngSubmit)="saveForm()">
       <ion-item>
         <ion-label position="floating">Full Name</ion-label>
         <ion-input formControlName="fullname" type="text" required></ion-input>
@@ -18,6 +21,7 @@
         </ion-input>
       </ion-item>
 
+    
       <ion-item>
         <ion-label>Organization</ion-label>
         <ion-select formControlName="enterprise" required>
@@ -63,56 +67,15 @@
       <ion-select-option value="5">5</ion-select-option>
     </ion-select>
   </ion-item>
-
+   
       <ion-row>
         <ion-col>
           <ion-button type="submit" color="primary" shape="round" expand="block">
-            Create Ticket
-            <ion-icon slot="start"  name="create-outline"></ion-icon>
-          </ion-button>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col>
-          <ion-button
-            type="submit"
-            color="dark"
-            expand="block"
-            [routerLink]="['/dashboard']"
-            shape="round"
-            routerDirection="back"
-          >
-            Back
+            Update Ticket #{{id}}
+            <ion-icon slot="start"  name="cloud-upload-outline"></ion-icon>
           </ion-button>
         </ion-col>
       </ion-row>
     </form>
-  </ion-list>
-
-    <ion-list>
-    <ion-list-header lines="full">
-      Ticket History
-    </ion-list-header>
-
-    <ion-item lines="full" *ngFor="let data of Data">
-      <ion-label>
-        <h5><strong>Ticket #{{data.id}} - Details and Information</strong></h5>
-        <p>FullName: <strong>{{data.fullname}}</strong></p>
-        <p>Email: <strong>{{data.email}}</strong></p>
-        <p>Enterprise: <strong>{{data.enterprise}}</strong></p>
-        <p>Cellphone: <strong>{{data.cellphone}}</strong></p>
-        <p>Piece: <strong>{{data.namepieza}}</strong></p>
-        <p>Material: <strong>{{data.material}}</strong></p>
-        <p>Quantity: <strong>{{data.cantidad}}</strong></p>
-        <p>Ticket Manager: <strong>{{data.ticketgestor}}</strong></p>
-        <p>Ticket Creation Date: <strong>{{data.datecreation}}</strong></p>
-        <p>Ticket Status: <strong>{{data.ticketstatus}}</strong></p>
-      </ion-label>
-
-      <div class="item-note" item-end>
-        <ion-icon name="create" style="zoom:2.0" [routerLink]="['/song/', data.id]"></ion-icon>        
-        <ion-icon name="trash" style="zoom:2.0" (click)="deleteSong(data.id)"></ion-icon>
-      </div>
-    </ion-item>
   </ion-list>
 </ion-content>

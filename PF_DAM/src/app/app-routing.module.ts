@@ -35,6 +35,11 @@ const routes: Routes = [
     path: 'createticket',
     loadChildren: () => import('./createticket/createticket.module').then( m => m.CreateticketPageModule)
   },
+  {
+    path: 'song/:id',
+    loadChildren: () => import('./song/song.module').then( m => m.SongPageModule)
+  },
+
 ];
 
 @NgModule({
