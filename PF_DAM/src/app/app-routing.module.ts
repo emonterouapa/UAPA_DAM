@@ -35,10 +35,6 @@ const routes: Routes = [
     path: 'createticket',
     loadChildren: () => import('./createticket/createticket.module').then( m => m.CreateticketPageModule)
   },
-  {
-    path: 'historicoticket',
-    loadChildren: () => import('./historicoticket/historicoticket.module').then( m => m.HistoricoticketPageModule)
-  },
 ];
 
 @NgModule({
