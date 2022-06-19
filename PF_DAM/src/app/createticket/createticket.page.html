@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header translucent>
   <ion-toolbar>
     <ion-title class="ion-text-center">Ticket Creation</ion-title>
   </ion-toolbar>
@@ -6,10 +6,10 @@
 
 <ion-content>
   <ion-list lines="full">
-    <form [formGroup]="mainForm" (ngSubmit)="storeData()">
+    <form [formGroup]="mainForm" (ngSubmit)="storeData()"  novalidate>
       <ion-item>
         <ion-label position="floating">Full Name</ion-label>
-        <ion-input formControlName="fullname" type="text" required></ion-input>
+        <ion-input formControlName="fullname" type="text" ng-required="true"></ion-input>
       </ion-item>
 
       <ion-item>
@@ -65,15 +65,13 @@
   </ion-item>
 
       <ion-row>
-        <ion-col>
-          <ion-button type="submit" color="primary" shape="round" expand="block">
+        <ion-col  col-6>
+          <ion-button type="submit" color="primary" shape="round" expand="block" [disabled]="mainForm.invalid"  (click)="ticketAlert()">
             Create Ticket
             <ion-icon slot="start"  name="create-outline"></ion-icon>
           </ion-button>
         </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col>
+        <ion-col offset-4>
           <ion-button
             type="submit"
             color="dark"

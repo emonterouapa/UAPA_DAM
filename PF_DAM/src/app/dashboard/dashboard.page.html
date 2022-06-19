@@ -3,19 +3,13 @@
     <ion-title  class="ion-text-center">Home Page <ion-icon  name="home"></ion-icon></ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-card>
-  <ion-card-header>
-    <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-    <ion-card-title>Card Title</ion-card-title>
-  </ion-card-header>
-
-  <ion-card-content>
-    Keep close to Nature's heart... and break clear away, once in awhile,
-    and climb a mountain or spend a week in the woods. Wash your spirit clean.
-  </ion-card-content>
-</ion-card>
 
 <ion-content class="ion-padding">
+  <ion-row>
+    <ion-col >
+      <img src="https://icon-library.com/images/username-icon/username-icon-3.jpg" class="avatar" />
+    </ion-col>
+  </ion-row>
   <ion-row>
     <ion-col >
       <p><b>Personal Information</b></p>
@@ -23,14 +17,12 @@
   </ion-row>
   <ion-row>
     <ion-col>
-      Your Full Name: {{nameshow}}
-      {{picture}}  
+      Your Full Name: {{nameshow}} 
     </ion-col>
   </ion-row>
   <ion-row>
     <ion-col>
       Your Email Address: {{userEmail}}
-      {{picture}} 
     </ion-col>
   </ion-row>
   <ion-row>
@@ -44,6 +36,7 @@
     New Ticket
     <ion-icon slot="start"  name="create-outline"></ion-icon>
   </ion-button>
+  
 </ion-content>
 <ion-footer>
   <ion-toolbar>

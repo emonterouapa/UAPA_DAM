@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from "@angular/forms";
+import { FormGroup, FormBuilder, ReactiveFormsModule, Validators, FormControl } from "@angular/forms";
 import { DbService } from './../services/db.service';
 import { ToastController } from '@ionic/angular';
 import { Router } from "@angular/router";
+import { AlertController } from '@ionic/angular';
 
 
 @Component({
@@ -13,9 +14,11 @@ import { Router } from "@angular/router";
 export class CreateticketPage implements OnInit {
   mainForm: FormGroup;
   Data: any[] = []
+  isSubmitted = false;
 
   constructor(
     private db: DbService,
+    public alertController: AlertController,
     public formBuilder: FormBuilder,
     private toast: ToastController,
     private router: Router
@@ -30,6 +33,17 @@ export class CreateticketPage implements OnInit {
       }
     });
 
+
+    
+    this.mainForm = this.formBuilder.group({
+      fullname: ['', Validators.required],
+      email: ['', Validators.required],
+      cellphone: ['', [Validators.required, Validators.pattern('^[0-9]+$')]]
+    })
+    
+
+
+    
     this.mainForm = this.formBuilder.group({
       fullname: [''],
       email: [''],
@@ -55,6 +69,7 @@ export class CreateticketPage implements OnInit {
       this.mainForm.value.cantidad
     ).then((res) => {
       this.mainForm.reset();
+      
     })
     
   }
@@ -67,6 +82,20 @@ export class CreateticketPage implements OnInit {
       });
       toast.present();      
     })
+  }
+
+  ticketAlert() {
+
+    this.alertController.create({
+      header: 'Ticket Creation',
+      message: 'The Ticket han been created Successfully',
+      buttons: ['OK']
+    }).then(res => {
+
+      res.present();
+
+    });
+
   }
    
 }
