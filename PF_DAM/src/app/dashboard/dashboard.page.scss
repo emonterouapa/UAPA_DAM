@@ -23,6 +23,7 @@ ion-content {
 
 ion-title{
   font-size: 18px;
+  color: black;
   
 }
 
@@ -55,9 +56,10 @@ ion-col{
   color: white;
 }
 
-.avatar {
-  vertical-align: middle;
-  width: 65px;
-  height: 65px;
-  border-radius: 100%;
+ion-avatar{
+  margin: auto;
+  width:100% !important;  
+  height : 100% !important;  
+  max-width: 200px !important;  //any size
+  max-height: 200px !important; //any size 
 }

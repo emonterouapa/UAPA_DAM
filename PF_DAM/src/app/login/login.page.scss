@@ -1,5 +1,5 @@
 ion-content {
-  --padding-top: 50%;
+  --padding-top: 10%;
   --padding-start: 10%;
   --padding-end: 10%;
   --background: url('https://w0.peakpx.com/wallpaper/990/831/HD-wallpaper-dark-blue-gradient-aurora-blue-background-colors-dark-dark-blue-gradient-plain-solid.jpg') 0 0/100% 100% no-repeat;
@@ -47,4 +47,13 @@ ion-title{
 
 span{
   color: white;
+}
+
+
+ion-avatar{
+  margin: auto;
+  width:100% !important;  
+  height : 100% !important;  
+  max-width: 200px !important;  //any size
+  max-height: 200px !important; //any size 
 }

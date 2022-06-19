@@ -74,15 +74,7 @@ export class CreateticketPage implements OnInit {
     
   }
 
-  deleteSong(id){
-    this.db.deleteSong(id).then(async(res) => {
-      let toast = await this.toast.create({
-        message: 'Ticket Deleted',
-        duration: 2500
-      });
-      toast.present();      
-    })
-  }
+
 
   ticketAlert() {
 
@@ -97,5 +89,30 @@ export class CreateticketPage implements OnInit {
     });
 
   }
+
+  async deleteConfirm(id) {
+    let alert = this.alertController.create({
+      header: 'Ticket Delete',
+      message: '¿Are you sure you want to Delete the Ticket',
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: () => {
+            console.log('The user cancell the operation');
+          }
+        },
+        {
+          text: 'Yes, Delete it',
+          handler: () => {
+            console.log('Ticket Deleted Successfully');
+            this.db.deleteSong(id);
+          }
+        }
+      ]
+    });
+    (await alert).present();
+  }
    
 }
+

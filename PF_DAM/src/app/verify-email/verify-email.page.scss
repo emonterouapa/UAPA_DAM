@@ -23,6 +23,7 @@ ion-content {
   
   ion-title{
     font-size: 18px;
+    color: black;
     
   }
   
@@ -30,4 +31,8 @@ ion-content {
     --ion-font-family: 'Montserrat', sans-serif;
     --border-radius: 8px;
     font-size: 14px;
+  }
+
+  p{
+    color: white;
   }
