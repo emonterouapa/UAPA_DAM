@@ -11,6 +11,7 @@ export class DashboardPage implements OnInit {
   userEmail: string;
   verifiedemail: boolean;
   nameshow: string;
+  picture: string;
 
   constructor(
     private navCtrl: NavController,
@@ -23,6 +24,7 @@ export class DashboardPage implements OnInit {
         this.userEmail = res.email;
         this.verifiedemail = res.emailVerified;
         this.nameshow = res.displayName;
+        this.picture = res.photoURL;
       } else {
         this.navCtrl.navigateBack('');
       }
