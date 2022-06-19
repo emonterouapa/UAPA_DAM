@@ -10,7 +10,7 @@
   </ion-avatar>
   <ion-row>
     <ion-col >
-      <p><b>Personal Information</b></p>
+      <p class="QA"><b>Personal Information</b></p>
     </ion-col>
   </ion-row>
   <ion-row>
@@ -34,7 +34,14 @@
     New Ticket
     <ion-icon slot="start"  name="create-outline"></ion-icon>
   </ion-button>
-  
+  <ion-col >
+    <p class="QA"><b>Quick View - Ticket History</b></p>
+  </ion-col>
+  <ion-item  lines="full" *ngFor="let data of Data">
+    <ion-label>
+      <h5><strong>Status: {{data.ticketstatus}} | Ticket #{{data.id}}</strong></h5>
+    </ion-label>
+  </ion-item>
 </ion-content>
 <ion-footer>
   <ion-toolbar>
